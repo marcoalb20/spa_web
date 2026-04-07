@@ -559,6 +559,10 @@ footer {
 
   .service {
     height: 100%;
+    min-height: unset;
+  }
+  .flip-inner{
+    height: 100%;
   }
 
   .s1 {
@@ -642,4 +646,135 @@ footer {
   .footer-content {
     width: auto;
   }
+}
+/* fin del media query */
+
+/* Flip Card (animacion) — fuera del media query */
+.service {
+  perspective: 1000px;
+  min-height: 220px;
+}
+
+.flip-inner {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.service:hover .flip-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-front,
+.flip-back {
+  position: absolute;
+  inset: 0;
+  border-radius: 15px;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  overflow: hidden;
+}
+
+.flip-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.flip-back {
+  background: #201913;
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  text-align: center;
+  gap: 10px;
+}
+
+.flip-back-icon { font-size: 2rem; }
+
+.flip-back-title {
+  color: #f5e6d8;
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.flip-back-desc {
+  color: #c9b8a8;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.flip-back-btn {
+  margin-top: 6px;
+  padding: 8px 20px;
+  background: transparent;
+  border: 1px solid #c9b8a8;
+  border-radius: 100px;
+  color: #f5e6d8;
+  font-size: 0.85rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.flip-back-btn:hover {
+  background: #f5e6d8;
+  color: #201913;
+}
+.package {
+  overflow: hidden;
+}
+
+.package-img {
+  transition: transform 0.4s ease-in-out;
+}
+
+.package:hover .package-img {
+  transform: scale(1.07);
+}
+.banner-title {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  animation: fadeSlideUp 1.2s ease-out both;
+}
+
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Desenfoque de imagen al hover del boton */
+.banner-button:hover ~ .banner-img,
+.banner-content:has(.banner-button:hover) ~ .banner-img {
+  filter: blur(3px);
+  transition: filter 0.3s ease;
+}
+
+.banner-img {
+  transition: filter 0.3s ease;
+}
+/* Animacion de entrada al scrolear */
+.service {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.service.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
