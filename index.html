@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -71,21 +72,57 @@
         <p class="services-title">Nuestros Servicios</p>
         <div class="services-element-box">
             <div class="service s1">
-                <img src="assets/img/service-1.png" alt="service-img" class="service-img">
-                <p class="services-text">Masaje relajante</p>
-            </div>
+  <div class="flip-inner">
+    <div class="flip-front">
+      <img src="assets/img/service-1.png" alt="service-img" class="service-img">
+      <p class="services-text">Masaje relajante</p>
+    </div>
+    <div class="flip-back">
+      <span class="flip-back-icon">🌿</span>
+      <p class="flip-back-title">Masaje relajante</p>
+      <p class="flip-back-desc">Alivia el estrés y la tensión muscular con técnicas suaves.</p>
+    </div>
+  </div>
+</div>
             <div class="service s2">
-                <img src="assets/img/service-2.png" alt="service-img" class="service-img">
-                <p class="services-text">Limpieza facial profunda</p>
-            </div>
+  <div class="flip-inner">
+    <div class="flip-front">
+      <img src="assets/img/service-2.png" alt="service-img" class="service-img">
+      <p class="services-text">Limpieza facial profunda</p>
+    </div>
+    <div class="flip-back">
+      <span class="flip-back-icon">✨</span>
+      <p class="flip-back-title">Limpieza facial profunda</p>
+      <p class="flip-back-desc">Purifica y revitaliza tu piel con productos premium.</p>
+    </div>
+  </div>
+</div>
             <div class="service s3">
-                <img src="assets/img/service-3.png" alt="service-img" class="service-img">
-                <p class="services-text">Masaje descontracturante</p>
-            </div>
+  <div class="flip-inner">
+    <div class="flip-front">
+      <img src="assets/img/service-3.png" alt="service-img" class="service-img">
+      <p class="services-text">Masaje descontracturante</p>
+    </div>
+    <div class="flip-back">
+      <span class="flip-back-icon">💆</span>
+      <p class="flip-back-title">Masaje descontracturante</p>
+      <p class="flip-back-desc">Libera contracturas y nudos musculares con presión profunda. Ideal para dolores crónicos.</p>
+    </div>
+  </div>
+</div>
             <div class="service s4">
-                <img src="assets/img/service-4.png" alt="service-img" class="service-img">
-                <p class="services-text">Spa de manos y pies</p>
-            </div>
+  <div class="flip-inner">
+    <div class="flip-front">
+      <img src="assets/img/service-4.png" alt="service-img" class="service-img">
+      <p class="services-text">Spa de manos y pies</p>
+    </div>
+    <div class="flip-back">
+      <span class="flip-back-icon">🌸</span>
+      <p class="flip-back-title">Spa de manos y pies</p>
+      <p class="flip-back-desc">Exfoliación, hidratación y masaje para manos y pies. Incluye esmaltado a elección.</p>
+    </div>
+  </div>
+</div>
         </div>
     </section>
 
@@ -164,7 +201,29 @@
         </div>
     </footer>
 
+<script>
+    /* Blurreado boton banner */
+  const btn = document.querySelector('.banner-button');
+  const img = document.querySelector('.banner-img');
 
+  btn.addEventListener('mouseenter', () => img.style.filter = 'blur(4px)');
+  btn.addEventListener('mouseleave', () => img.style.filter = 'blur(0px)');
+
+  /* Animacion scroll - Servicios */
+  const services = document.querySelectorAll('.service');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, i * 150);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  services.forEach(s => observer.observe(s));
+</script>
 </body>
 
 </html>
