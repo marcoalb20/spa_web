@@ -1,8 +1,30 @@
+@font-face {
+  font-family: "RalewayL";
+  src: url("../assets/font/Raleway-Light.ttf");
+  font-display: swap;
+}
+@font-face {
+  font-family: "RalewayB";
+  src: url("../assets/font/Raleway-Bold.ttf");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Raleway";
+  src: url("../assets/font/Raleway-Medium.ttf");
+  font-display: swap;
+}
+
 :root {
   --color-primario: #fbfbf9;
   --color-secundario: #3498db;
   --color-acento: #e74c3c;
   --color-header: #000000d3;
+
+  --color-background: #24201f;
+  --color-fonts-p: #efe7d4;
+  --color-buttons-p: #efe7d4;
+  --color-buttons-s: #bda85a;
+  --color-buttons-s-transparent: #bda85a7b;
   --max-width-content: 1300px;
 }
 
@@ -10,22 +32,23 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Raleway", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
   min-height: 100vh;
-  color: #333;
-  /* display: flex; */
-  /* flex-direction: column; */
-  background-color: var(--color-primario);
+  background-color: var(--color-background);
+}
+
+section {
+  scroll-margin-top: 50px;
 }
 
 header {
   height: auto;
   width: 100%;
   padding: 1rem;
-  position: absolute;
+  position: fixed;
   z-index: 100;
   top: 0;
   right: 0;
@@ -35,14 +58,20 @@ header {
 }
 
 header .center-header {
-  background-color: var(--color-primario);
+  background-color: var(--color-background);
   display: flex;
   justify-content: space-between;
   align-items: center;
   text-align: center;
   padding-inline: 15px;
-  width: 80%;
+  width: 100%;
   border-radius: 100px;
+  transition: transform 0.5s ease-in-out;
+  border: var(--color-buttons-p) solid 0.5px;
+}
+
+header .active {
+  border: var(--color-background) solid 0.5px;
 }
 
 header .logo {
@@ -73,7 +102,7 @@ header .options .group-1 {
 
 header .burguer {
   height: 100%;
-  color: black;
+  color: var(--color-fonts-p);
   font-weight: bold;
   font-size: 1.5rem;
   display: flex;
@@ -82,10 +111,83 @@ header .burguer {
   transition: all 0.1s ease-in-out;
   border: none;
   background-color: transparent;
+  cursor: pointer;
 }
 
 header .burguer:hover {
   transform: scale(1.2);
+}
+
+.group-2 {
+  background-color: var(--color-background);
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-100%);
+  transition: transform 0.5s ease-in-out;
+  padding: 20px;
+}
+
+.group-2.active {
+  transform: translateX(0%);
+  box-shadow: var(--color-buttons-s-transparent) 0px 0px 20px 10px;
+}
+
+.group-2 .op {
+  height: 100%;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.group-2 .op a {
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  margin: 10px;
+  font-size: 1.25rem;
+  border-radius: 15px;
+  background-color: var(--color-buttons-p);
+  font-weight: bold;
+  color: black;
+  text-decoration: none;
+}
+
+.group-2 .op a:hover {
+  text-decoration: underline;
+}
+
+.group-2 button {
+  height: auto;
+  width: auto;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px;
+  background-color: transparent;
+  border: none;
+  font-size: 2rem;
+  color: var(--color-buttons-p);
+  padding-top: 1rem;
+  cursor: pointer;
+}
+
+.group-2 .logo {
+  height: 50px;
+  width: auto;
+  margin: 1rem;
+}
+
+.group-2 .logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .banner {
@@ -99,7 +201,6 @@ header .burguer:hover {
   padding: 0;
   margin: 0;
   position: relative;
-  /* height: 60vw; */
   height: 350px;
   width: 100%;
   max-height: 500px;
@@ -121,8 +222,8 @@ header .burguer:hover {
   align-items: center;
   justify-content: center;
   text-align: center;
-  background-color: rgba(0, 0, 0, 0.3);
-  color: white;
+  color: var(--color-fonts-p);
+  background-color: #00000050;
   font-size: 2rem;
   inset: 0;
   padding: 15px;
@@ -130,8 +231,10 @@ header .burguer:hover {
 }
 
 .banner-title {
+  font-weight: bold;
   max-width: 400px;
   padding-bottom: 15px;
+  animation: fadeSlideUp 1.2s ease-out both;
 }
 
 .banner-button {
@@ -142,7 +245,7 @@ header .burguer:hover {
   justify-content: center;
   text-align: center;
   padding: 0.5rem 1rem;
-  background-color: white;
+  background-color: var(--color-buttons-p);
   border-radius: 100px;
   cursor: pointer;
   transition: all ease-in-out 0.25s;
@@ -157,20 +260,18 @@ header .burguer:hover {
 }
 
 .banner-button:hover {
-  text-decoration: underline;
-  color: white;
-  background-color: black;
+  background-color: var(--color-buttons-s);
 }
 
 .banner-button:hover a {
+  text-decoration: underline;
   color: white;
 }
 
 .about {
   height: 100%;
   width: 100%;
-  /* display: flex; */
-  color: black;
+  color: var(--color-fonts-p);
 }
 
 .about-text-box {
@@ -193,6 +294,7 @@ header .burguer:hover {
   width: 100%;
   font-size: 2rem;
   margin-bottom: 1rem;
+  font-weight: bold;
 }
 
 .about-text {
@@ -215,7 +317,7 @@ header .burguer:hover {
 
 .services {
   width: 100%;
-  color: black;
+  color: var(--color-fonts-p);
   padding: 1rem;
   text-align: start;
   padding: 2rem;
@@ -225,6 +327,7 @@ header .burguer:hover {
 .services-title {
   font-size: 2rem;
   margin-bottom: 1rem;
+  font-weight: bold;
 }
 
 .services-element-box {
@@ -241,7 +344,6 @@ header .burguer:hover {
   width: 100%;
   margin-bottom: 0.5rem;
   position: relative;
-  /* max-height: 550px; */
 }
 
 .service-img {
@@ -250,21 +352,62 @@ header .burguer:hover {
   border-radius: 15px;
 }
 
-.services-text {
+.service-box {
   position: absolute;
   height: 100%;
   width: 100%;
   display: flex;
-  align-items: end;
+  flex-direction: column;
+  align-items: start;
+  justify-content: end;
   text-align: start;
   background-color: rgba(0, 0, 0, 0.3);
-  color: white;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   z-index: 1;
-  bottom: 0%;
-  left: 0%;
+  inset: 0;
   padding: 15px;
   border-radius: 15px;
+}
+
+.services-text {
+  color: white;
+  font-size: bold;
+  padding: 0.5rem;
+}
+
+.service-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  background-color: var(--color-buttons-s-transparent);
+  border: var(--color-buttons-s) solid 1px;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all ease-in-out 0.25s;
+  cursor: pointer;
+}
+
+.service-button:hover {
+  background-color: var(--color-buttons-s);
+}
+
+.service-button-text {
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+  padding-right: 10px;
+  background-color: transparent;
+  border: none;
+}
+
+.service-button i {
+  font-size: 1rem;
+  padding: 5px;
+  background-color: white;
+  border-radius: 100px;
+  color: rgb(129, 129, 129);
 }
 
 .packages {
@@ -273,6 +416,8 @@ header .burguer:hover {
 }
 
 .packages-title {
+  color: var(--color-fonts-p);
+  font-weight: bold;
   font-size: 2rem;
   margin-bottom: 1rem;
 }
@@ -440,7 +585,11 @@ footer {
   text-align: center;
 }
 
-@media (min-width: 500px) {
+@media (min-width: 670px) {
+  section {
+    scroll-margin-top: 70px;
+  }
+
   header .options .group-1 {
     display: flex;
     align-items: center;
@@ -450,7 +599,7 @@ footer {
   }
   header .options .group-1 a {
     text-decoration: none;
-    color: black;
+    color: var(--color-fonts-p);
     margin: 0rem 0.5rem;
     padding: 0rem 0.5rem;
     transition: all 0.1s ease-in-out;
@@ -465,13 +614,8 @@ footer {
   }
 
   header .center-header {
+    padding: 15px;
     width: 95%;
-  }
-}
-
-@media (min-width: 670px) {
-  header {
-    /* background-color: rgba(255, 0, 0, 0.347); */
   }
 
   .contact-box {
@@ -491,6 +635,10 @@ footer {
 }
 
 @media (min-width: 780px) {
+  section {
+    scroll-margin-top: 90px;
+  }
+
   header {
     /* background-color: rgba(26, 255, 0, 0.347); */
   }
@@ -543,6 +691,9 @@ footer {
     flex-direction: column;
     align-items: center;
   }
+  .service:hover .flip-inner {
+    transform: rotateY(180deg);
+  }
 
   .services-title {
     width: 100%;
@@ -560,93 +711,11 @@ footer {
   .service {
     height: 100%;
     min-height: unset;
-  }
-  .flip-inner {
-    height: 100%;
-  }
-
-  /* Flip Card (animacion) — fuera del media query */
-  .service {
     perspective: 1000px;
     min-height: 220px;
   }
-
   .flip-inner {
-    position: relative;
-    width: 100%;
-    /* height: 220px; */
-    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-    transform-style: preserve-3d;
-  }
-
-  .service:hover .flip-inner {
-    transform: rotateY(180deg);
-  }
-
-  .flip-front,
-  .flip-back {
-    position: absolute;
-    inset: 0;
-    border-radius: 15px;
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-    overflow: hidden;
-  }
-
-  .flip-front img {
-    width: 100%;
     height: 100%;
-    object-fit: cover;
-    border-radius: 15px;
-  }
-
-  .flip-back {
-    background: #201913;
-    transform: rotateY(180deg);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 1.5rem;
-    text-align: center;
-    gap: 10px;
-  }
-
-  .flip-back-icon {
-    font-size: 2rem;
-    color: white;
-  }
-
-  .flip-back-title {
-    color: #f5e6d8;
-    font-size: 1.1rem;
-    font-weight: bold;
-    margin: 0;
-  }
-
-  .flip-back-desc {
-    color: #c9b8a8;
-    font-size: 0.85rem;
-    line-height: 1.5;
-    margin: 0;
-  }
-
-  .flip-back-btn {
-    margin-top: 6px;
-    padding: 8px 20px;
-    background: transparent;
-    border: 1px solid #c9b8a8;
-    border-radius: 100px;
-    color: #f5e6d8;
-    font-size: 0.85rem;
-    cursor: pointer;
-    text-decoration: none;
-    transition: all 0.2s;
-  }
-
-  .flip-back-btn:hover {
-    background: #f5e6d8;
-    color: #201913;
   }
 
   .s1 {
@@ -668,6 +737,10 @@ footer {
     max-height: 500px;
     grid-column: 3;
     grid-row: 1 / span 2;
+  }
+
+  .flip-inner {
+    height: 100%;
   }
 
   .service-img {
@@ -733,6 +806,8 @@ footer {
 }
 /* fin del media query */
 
+/* Flip Card (animacion) — fuera del media query */
+
 .package {
   overflow: hidden;
 }
@@ -743,11 +818,6 @@ footer {
 
 .package:hover .package-img {
   transform: scale(1.07);
-}
-.banner-title {
-  font-family: "Playfair Display", serif;
-  font-style: italic;
-  animation: fadeSlideUp 1.2s ease-out both;
 }
 
 @keyframes fadeSlideUp {
