@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="catalog.css">
+    <title>Catálogo – Aura Spa</title>
+</head>
+
+<body>
+
+    <!-- ===== HEADER (mismo que index) ===== -->
+    <header>
+        <div id="header" class="center-header">
+            <section class="logo">
+                <img src="assets/img/logo-b.png" alt="logo">
+            </section>
+            <section class="options">
+                <div class="group-1">
+                    <a href="index.html#banner">Inicio</a>
+                    <a href="index.html#about">Sobre Mí</a>
+                    <a href="index.html#service">Servicios</a>
+                    <a href="index.html#package">Paquetes</a>
+                    <a href="index.html#contact">Contacto</a>
+                    <a href="catalog.html" class="nav-active">Catálogo</a>
+                </div>
+                <button id="burguer" class="burguer">
+                    <i class="ri-menu-line"></i>
+                </button>
+            </section>
+        </div>
+    </header>
+
+    <!-- Mobile menu -->
+    <div id="group-2" class="group-2">
+        <section class="logo">
+            <img src="assets/img/logo-b.png" alt="logo">
+        </section>
+        <div class="op">
+            <a href="index.html#banner">Inicio</a>
+            <a href="index.html#about">Sobre Mí</a>
+            <a href="index.html#service">Servicios</a>
+            <a href="index.html#package">Paquetes</a>
+            <a href="index.html#contact">Contacto</a>
+            <a href="catalog.html">Catálogo</a>
+        </div>
+        <button id="close">
+            <i class="ri-close-circle-line"></i>
+        </button>
+    </div>
+    <!-- ===== FIN HEADER ===== -->
+
+
+    <!-- ===== HERO CATÁLOGO ===== -->
+    <section class="cat-hero">
+        <div class="cat-hero-content">
+            <p class="cat-hero-tag">Nuestros Tratamientos</p>
+            <h1 class="cat-hero-title">Catálogo de Servicios</h1>
+            <p class="cat-hero-sub">Descubre todos los tratamientos que tenemos para ti. Reserva el que más te inspire.</p>
+        </div>
+        <div class="cat-hero-deco"></div>
+    </section>
+
+
+    <!-- ===== FILTROS ===== -->
+    <section class="cat-filters">
+        <button class="filter-btn active" data-filter="all">Todos</button>
+        <button class="filter-btn" data-filter="masajes">Masajes</button>
+        <button class="filter-btn" data-filter="facial">Facial</button>
+        <button class="filter-btn" data-filter="corporal">Corporal</button>
+        <button class="filter-btn" data-filter="spa">Spa</button>
+    </section>
+
+
+    <!-- ===== GRID CATÁLOGO ===== -->
+    <section class="cat-grid-section">
+        <div class="cat-grid">
+
+            <!-- Card 1 -->
+            <div class="cat-card visible" data-category="masajes">
+                <div class="cat-card-img-wrap">
+                    <img src="assets/img/service-1.png" alt="Masaje relajante" class="cat-card-img">
+                    <span class="cat-card-price">S/ 80</span>
+                    <span class="cat-card-badge">Popular</span>
+                </div>
+                <div class="cat-card-body">
+                    <p class="cat-card-category">Masajes</p>
+                    <h3 class="cat-card-title">Masaje Relajante</h3>
+                    <div class="cat-card-divider"></div>
+                    <p class="cat-card-desc">Libera tensiones y restaura el equilibrio con aceites esenciales premium seleccionados especialmente para ti.</p>
+                    <div class="cat-card-meta">
+                        <span><i class="ri-time-line"></i> 60 min</span>
+                        <span><i class="ri-star-fill"></i> 4.9</span>
+                    </div>
+                    <button class="cat-card-btn">Reservar <i class="ri-arrow-right-up-fill"></i></button>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="cat-card visible" data-category="facial">
+                <div class="cat-card-img-wrap">
+                    <img src="assets/img/service-2.png" alt="Limpieza facial" class="cat-card-img">
+                    <span class="cat-card-price">S/ 90</span>
+                </div>
+                <div class="cat-card-body">
+                    <p class="cat-card-category">Facial</p>
+                    <h3 class="cat-card-title">Limpieza Facial Profunda</h3>
+                    <div class="cat-card-divider"></div>
+                    <p class="cat-card-desc">Purifica y revitaliza tu piel con nuestra técnica de extracción profunda y mascarilla hidratante.</p>
+                    <div class="cat-card-meta">
+                        <span><i class="ri-time-line"></i> 75 min</span>
+                        <span><i class="ri-star-fill"></i> 4.8</span>
+                    </div>
+                    <button class="cat-card-btn">Reservar <i class="ri-arrow-right-up-fill"></i></button>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="cat-card visible" data-category="masajes">
+                <div class="cat-card-img-wrap">
+                    <img src="assets/img/service-3.png" alt="Masaje descontracturante" class="cat-card-img">
+                    <span class="cat-card-price">S/ 100</span>
+                    <span class="cat-card-badge">Recomendado</span>
+                </div>
+                <div class="cat-card-body">
+                    <p class="cat-card-category">Masajes</p>
+                    <h3 class="cat-card-title">Masaje Descontracturante</h3>
+                    <div class="cat-card-divider"></div>
+                    <p class="cat-card-desc">Técnica de presión profunda para aliviar contracturas musculares y mejorar tu movilidad.</p>
+                    <div class="cat-card-meta">
+                        <span><i class="ri-time-line"></i> 90 min</span>
+                        <span><i class="ri-star-fill"></i> 5.0</span>
+                    </div>
+                    <button class="cat-card-btn">Reservar <i class="ri-arrow-right-up-fill"></i></button>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="cat-card visible" data-category="spa">
+                <div class="cat-card-img-wrap">
+                    <img src="assets/img/service-4.png" alt="Spa de manos y pies" class="cat-card-img">
+                    <span class="cat-card-price">S/ 60</span>
+                </div>
+                <div class="cat-card-body">
+                    <p class="cat-card-category">Spa</p>
+                    <h3 class="cat-card-title">Spa de Manos y Pies</h3>
+                    <div class="cat-card-divider"></div>
+                    <p class="cat-card-desc">Exfoliación, hidratación y masaje de manos y pies para una experiencia de relajación completa.</p>
+                    <div class="cat-card-meta">
+                        <span><i class="ri-time-line"></i> 45 min</span>
+                        <span><i class="ri-star-fill"></i> 4.7</span>
+                    </div>
+                    <button class="cat-card-btn">Reservar <i class="ri-arrow-right-up-fill"></i></button>
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="cat-card visible" data-category="corporal">
+                <div class="cat-card-img-wrap">
+                    <img src="assets/img/paquete-1.png" alt="Day Spa Individual" class="cat-card-img">
+                    <span class="cat-card-price">S/ 120</span>
+                    <span class="cat-card-badge">Especial</span>
+                </div>
+                <div class="cat-card-body">
+                    <p class="cat-card-category">Corporal</p>
+                    <h3 class="cat-card-title">Day Spa Individual</h3>
+                    <div class="cat-card-divider"></div>
+                    <p class="cat-card-desc">Mascarilla facial, baño aromático con sales premium y té relajante. Una experiencia completa para ti.</p>
+                    <div class="cat-card-meta">
+                        <span><i class="ri-time-line"></i> 120 min</span>
+                        <span><i class="ri-star-fill"></i> 4.9</span>
+                    </div>
+                    <button class="cat-card-btn">Reservar <i class="ri-arrow-right-up-fill"></i></button>
+                </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="cat-card visible" data-category="spa">
+                <div class="cat-card-img-wrap">
+                    <img src="assets/img/paquete-2.png" alt="Day Spa Pareja" class="cat-card-img">
+                    <span class="cat-card-price">S/ 200</span>
+                    <span class="cat-card-badge">Duo</span>
+                </div>
+                <div class="cat-card-body">
+                    <p class="cat-card-category">Spa</p>
+                    <h3 class="cat-card-title">Day Spa Pareja</h3>
+                    <div class="cat-card-divider"></div>
+                    <p class="cat-card-desc">Masaje en pareja, baño de inmersión compartido y fondue de chocolate. Perfecto para celebrar.</p>
+                    <div class="cat-card-meta">
+                        <span><i class="ri-time-line"></i> 150 min</span>
+                        <span><i class="ri-star-fill"></i> 5.0</span>
+                    </div>
+                    <button class="cat-card-btn">Reservar <i class="ri-arrow-right-up-fill"></i></button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ===== FOOTER (mismo que index) ===== -->
+    <section id="contact" class="contact">
+        <div class="contact-box">
+            <div class="contact-title">
+                <p class="contact-title-text">Contáctame</p>
+            </div>
+            <div class="contact-text-box">
+                <a href="#" target="_blank" class="contact-item">
+                    <div class="icon"><i class="ri-mail-line"></i></div>
+                    <p class="contact-text">contacto@auraspa.com</p>
+                </a>
+                <a href="#" class="contact-item">
+                    <div class="icon"><i class="ri-phone-line"></i></div>
+                    <p class="contact-text">123 456 789</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-text-box">
+            <p class="footer-text">© 2026 Aura Spa. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <!-- ===== FIN FOOTER ===== -->
+
+    <script>
+        // ── Burger menu ──────────────────────────────────────
+        const burguer = document.getElementById('burguer');
+        const menu = document.getElementById('group-2');
+        const closeBtn = document.getElementById('close');
+
+        burguer?.addEventListener('click', () => menu.classList.add('active'));
+        closeBtn?.addEventListener('click', () => menu.classList.remove('active'));
+
+        menu.querySelectorAll('a').forEach(a => {
+            a.addEventListener('click', () => menu.classList.remove('active'));
+        });
+
+        // ── Filtros ──────────────────────────────────────────
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const cards = document.querySelectorAll('.cat-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filter = btn.dataset.filter;
+                cards.forEach(card => {
+                    const match = filter === 'all' || card.dataset.category === filter;
+                    card.style.display = match ? '' : 'none';
+                });
+            });
+        });
+
+        // ── Scroll reveal ─────────────────────────────────────
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) e.target.classList.add('visible');
+            });
+        }, { threshold: 0.12 });
+
+        cards.forEach(c => observer.observe(c));
+    </script>
+</body>
+</html>
