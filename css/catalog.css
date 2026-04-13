@@ -1,21 +1,16 @@
-/* =========================================================
-   catalog.css  –  Aura Spa | Catálogo
-   Comparte variables de color / tipografía con index.css
-   ========================================================= */
-
 @font-face {
   font-family: "RalewayL";
-  src: url("assets/font/Raleway-Light.ttf");
+  src: url("../assets/font/Raleway-Light.ttf");
   font-display: swap;
 }
 @font-face {
   font-family: "RalewayB";
-  src: url("assets/font/Raleway-Bold.ttf");
+  src: url("../assets/font/Raleway-Bold.ttf");
   font-display: swap;
 }
 @font-face {
   font-family: "Raleway";
-  src: url("assets/font/Raleway-Medium.ttf");
+  src: url("../assets/font/Raleway-Medium.ttf");
   font-display: swap;
 }
 
@@ -36,7 +31,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Raleway", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Raleway";
 }
 
 body {
@@ -88,7 +83,9 @@ header .logo {
   width: 40px;
 }
 
-header .logo img { width: 100%; }
+header .logo img {
+  width: 100%;
+}
 
 header .options {
   display: flex;
@@ -98,7 +95,9 @@ header .options {
   height: 100%;
 }
 
-header .options .group-1 { display: none; }
+header .options .group-1 {
+  display: none;
+}
 
 header .options .group-1 .nav-active {
   color: var(--color-buttons-s) !important;
@@ -118,7 +117,9 @@ header .burguer {
   transition: all 0.1s ease-in-out;
 }
 
-header .burguer:hover { transform: scale(1.2); }
+header .burguer:hover {
+  transform: scale(1.2);
+}
 
 /* Mobile menu */
 .group-2 {
@@ -162,7 +163,9 @@ header .burguer:hover { transform: scale(1.2); }
   text-decoration: none;
 }
 
-.group-2 .op a:hover { text-decoration: underline; }
+.group-2 .op a:hover {
+  text-decoration: underline;
+}
 
 .group-2 button {
   position: absolute;
@@ -193,7 +196,7 @@ header .burguer:hover { transform: scale(1.2); }
    HERO CATÁLOGO
    ════════════════════════════════════════════════════════ */
 .cat-hero {
-  padding-top: 100px;
+  padding-top: 150px;
   padding-bottom: 60px;
   padding-inline: 2rem;
   text-align: center;
@@ -208,7 +211,11 @@ header .burguer:hover { transform: scale(1.2); }
 .cat-hero-deco {
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at 50% 120%, #bda85a22 0%, transparent 70%);
+  background: radial-gradient(
+    ellipse at 50% 120%,
+    #bda85a22 0%,
+    transparent 70%
+  );
   pointer-events: none;
 }
 
@@ -229,13 +236,19 @@ header .burguer:hover { transform: scale(1.2); }
   line-height: 1.1;
   margin-bottom: 1rem;
   animation: titleReveal 1.1s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
-  background: linear-gradient(90deg, var(--color-fonts-p) 0%, var(--color-buttons-s) 50%, var(--color-fonts-p) 100%);
+  background: linear-gradient(
+    90deg,
+    var(--color-fonts-p) 0%,
+    var(--color-buttons-s) 50%,
+    var(--color-fonts-p) 100%
+  );
   background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  animation: titleReveal 1.1s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both,
-             shimmer 3.5s linear 1.4s infinite;
+  animation:
+    titleReveal 1.1s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both,
+    shimmer 3.5s linear 1.4s infinite;
 }
 
 .cat-hero-sub {
@@ -248,7 +261,7 @@ header .burguer:hover { transform: scale(1.2); }
 
 /* Línea decorativa bajo el tag */
 .cat-hero-tag::after {
-  content: '';
+  content: "";
   display: block;
   width: 0;
   height: 1px;
@@ -259,14 +272,18 @@ header .burguer:hover { transform: scale(1.2); }
 
 /* Partículas doradas de fondo */
 .cat-hero-deco::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   background-image:
     radial-gradient(circle, #bda85a55 1px, transparent 1px),
     radial-gradient(circle, #bda85a33 1px, transparent 1px);
-  background-size: 60px 60px, 35px 35px;
-  background-position: 0 0, 30px 30px;
+  background-size:
+    60px 60px,
+    35px 35px;
+  background-position:
+    0 0,
+    30px 30px;
   animation: particleDrift 8s linear infinite;
   opacity: 0.4;
 }
@@ -328,11 +345,16 @@ header .burguer:hover { transform: scale(1.2); }
   border-radius: 18px;
   overflow: hidden;
   border: 1px solid #3e3630;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
   /* scroll reveal */
   opacity: 0;
   transform: translateY(40px);
-  transition: opacity 0.55s ease, transform 0.55s ease, box-shadow 0.3s ease;
+  transition:
+    opacity 0.55s ease,
+    transform 0.55s ease,
+    box-shadow 0.3s ease;
 }
 
 .cat-card.visible {
@@ -342,7 +364,9 @@ header .burguer:hover { transform: scale(1.2); }
 
 .cat-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 0 1px var(--color-buttons-s-transparent);
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.4),
+    0 0 0 1px var(--color-buttons-s-transparent);
 }
 
 /* Image area */
@@ -557,40 +581,74 @@ footer {
    ANIMACIONES
    ════════════════════════════════════════════════════════ */
 @keyframes fadeSlideUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes tagReveal {
-  from { opacity: 0; letter-spacing: 8px; transform: translateY(20px); }
-  to   { opacity: 1; letter-spacing: 3px;  transform: translateY(0); }
+  from {
+    opacity: 0;
+    letter-spacing: 8px;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    letter-spacing: 3px;
+    transform: translateY(0);
+  }
 }
 
 @keyframes titleReveal {
-  from { opacity: 0; transform: translateY(40px) scale(0.96); }
-  to   { opacity: 1; transform: translateY(0)    scale(1); }
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 @keyframes shimmer {
-  0%   { background-position: 200% center; }
-  100% { background-position: -200% center; }
+  0% {
+    background-position: 200% center;
+  }
+  100% {
+    background-position: -200% center;
+  }
 }
 
 @keyframes lineGrow {
-  from { width: 0; }
-  to   { width: 60px; }
+  from {
+    width: 0;
+  }
+  to {
+    width: 60px;
+  }
 }
 
 @keyframes particleDrift {
-  from { transform: translateY(0); }
-  to   { transform: translateY(-60px); }
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-60px);
+  }
 }
 
 /* ════════════════════════════════════════════════════════
    RESPONSIVE
    ════════════════════════════════════════════════════════ */
 @media (min-width: 670px) {
-  section { scroll-margin-top: 70px; }
+  section {
+    scroll-margin-top: 70px;
+  }
 
   header .options .group-1 {
     display: flex;
@@ -611,7 +669,9 @@ footer {
     text-decoration: underline;
   }
 
-  header .options .burguer { display: none; }
+  header .options .burguer {
+    display: none;
+  }
 
   header .center-header {
     padding: 15px;
@@ -622,13 +682,23 @@ footer {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .contact-box { flex-direction: row; justify-content: space-evenly; }
-  .contact-title { font-size: 2rem; }
-  .contact-text-box { width: auto; align-items: start; }
+  .contact-box {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  .contact-title {
+    font-size: 2rem;
+  }
+  .contact-text-box {
+    width: auto;
+    align-items: start;
+  }
 }
 
 @media (min-width: 1024px) {
-  section { scroll-margin-top: 90px; }
+  section {
+    scroll-margin-top: 90px;
+  }
 
   .cat-grid {
     grid-template-columns: repeat(3, 1fr);

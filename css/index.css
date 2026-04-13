@@ -33,6 +33,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Raleway", Tahoma, Geneva, Verdana, sans-serif;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -256,7 +257,6 @@ header .burguer:hover {
   color: black;
   font-size: 1rem;
   font-weight: bold;
-  padding-right: 10px;
 }
 
 .banner-button:hover {
@@ -402,6 +402,40 @@ header .burguer:hover {
   border: none;
 }
 
+.all-service-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.all-service-button {
+  width: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  background-color: var(--color-buttons-s-transparent);
+  border: var(--color-buttons-s) solid 1px;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all ease-in-out 0.25s;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.all-service-button:hover {
+  background-color: var(--color-buttons-s);
+}
+
+.all-service-button-text {
+  color: white;
+  font-size: 1rem;
+  background-color: transparent;
+  border: none;
+}
+
 .service-button i {
   font-size: 1rem;
   padding: 5px;
@@ -435,6 +469,8 @@ header .burguer:hover {
   width: 100%;
   margin-bottom: 0.5rem;
   position: relative;
+  overflow: hidden;
+  transition: transform 0.5s ease-in-out;
 }
 
 .package-img {
@@ -443,6 +479,10 @@ header .burguer:hover {
   width: 100%;
   border-radius: 15px;
   object-fit: cover;
+}
+
+.package:hover {
+  transform: scale(0.98);
 }
 
 .package-box {
@@ -454,7 +494,7 @@ header .burguer:hover {
   align-items: center;
   justify-content: center;
   text-align: start;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.5);
   color: white;
   font-size: 1.2rem;
   z-index: 1;
@@ -479,9 +519,8 @@ header .burguer:hover {
   justify-content: center;
   text-align: center;
   padding: 0.5rem 1rem;
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: var(--color-buttons-p);
   color: white;
-  border: white solid 1px;
   border-radius: 100px;
   cursor: pointer;
   transition: all ease-in-out 0.25s;
@@ -491,7 +530,7 @@ header .burguer:hover {
 
 .package-button-text {
   text-decoration: none;
-  color: white;
+  color: black;
   font-size: 1rem;
   font-weight: bold;
   padding-right: 10px;
@@ -501,16 +540,17 @@ header .burguer:hover {
   width: 20px;
   background-color: white;
   border-radius: 100px;
-  color: rgb(129, 129, 129);
+  color: black;
 }
 
 .package-button:hover {
   color: white;
-  background-color: black;
+  background-color: var(--color-buttons-s);
 }
 
 .package-button:hover a {
   color: white;
+  text-decoration: underline;
 }
 
 .contact {
@@ -803,21 +843,6 @@ footer {
   .footer-content {
     width: auto;
   }
-}
-/* fin del media query */
-
-/* Flip Card (animacion) — fuera del media query */
-
-.package {
-  overflow: hidden;
-}
-
-.package-img {
-  transition: transform 0.4s ease-in-out;
-}
-
-.package:hover .package-img {
-  transform: scale(1.07);
 }
 
 @keyframes fadeSlideUp {
