@@ -3,11 +3,13 @@
   src: url("../assets/font/Raleway-Light.ttf");
   font-display: swap;
 }
+
 @font-face {
   font-family: "RalewayB";
   src: url("../assets/font/Raleway-Bold.ttf");
   font-display: swap;
 }
+
 @font-face {
   font-family: "Raleway";
   src: url("../assets/font/Raleway-Medium.ttf");
@@ -196,8 +198,7 @@ header .burguer:hover {
    HERO CATÁLOGO
    ════════════════════════════════════════════════════════ */
 .cat-hero {
-  padding-top: 150px;
-  padding-bottom: 60px;
+  padding-top: 100px;
   padding-inline: 2rem;
   text-align: center;
   position: relative;
@@ -211,11 +212,9 @@ header .burguer:hover {
 .cat-hero-deco {
   position: absolute;
   inset: 0;
-  background: radial-gradient(
-    ellipse at 50% 120%,
-    #bda85a22 0%,
-    transparent 70%
-  );
+  background: radial-gradient(ellipse at 50% 120%,
+      #bda85a22 0%,
+      transparent 70%);
   pointer-events: none;
 }
 
@@ -236,12 +235,10 @@ header .burguer:hover {
   line-height: 1.1;
   margin-bottom: 1rem;
   animation: titleReveal 1.1s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
-  background: linear-gradient(
-    90deg,
-    var(--color-fonts-p) 0%,
-    var(--color-buttons-s) 50%,
-    var(--color-fonts-p) 100%
-  );
+  background: linear-gradient(90deg,
+      var(--color-fonts-p) 0%,
+      var(--color-buttons-s) 50%,
+      var(--color-fonts-p) 100%);
   background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -298,6 +295,7 @@ header .burguer:hover {
   align-items: center;
   justify-content: center;
   padding: 0 2rem 2rem;
+  margin-top: 15px;
 }
 
 .filter-btn {
@@ -585,6 +583,7 @@ footer {
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -597,6 +596,7 @@ footer {
     letter-spacing: 8px;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     letter-spacing: 3px;
@@ -609,6 +609,7 @@ footer {
     opacity: 0;
     transform: translateY(40px) scale(0.96);
   }
+
   to {
     opacity: 1;
     transform: translateY(0) scale(1);
@@ -619,6 +620,7 @@ footer {
   0% {
     background-position: 200% center;
   }
+
   100% {
     background-position: -200% center;
   }
@@ -628,6 +630,7 @@ footer {
   from {
     width: 0;
   }
+
   to {
     width: 60px;
   }
@@ -637,6 +640,7 @@ footer {
   from {
     transform: translateY(0);
   }
+
   to {
     transform: translateY(-60px);
   }
@@ -678,6 +682,11 @@ footer {
     width: 95%;
   }
 
+  .cat-hero {
+    padding-top: 150px;
+    padding-bottom: 60px;
+  }
+
   .cat-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -686,9 +695,11 @@ footer {
     flex-direction: row;
     justify-content: space-evenly;
   }
+
   .contact-title {
     font-size: 2rem;
   }
+
   .contact-text-box {
     width: auto;
     align-items: start;
