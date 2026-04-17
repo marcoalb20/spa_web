@@ -16,7 +16,7 @@ const contactMenu = document.getElementById("contactMenu");
 
 // Botones para acción de whatsapp
 const bannerButton = document.getElementById("banner-button")
-const bLink = 'Hol Hellen, quisiera reservar una cita en el salón'
+const bLink = 'Hola Hellen, quisiera reservar una cita en el salón'
 
 const laceadoButton = document.getElementById("ss-laceado")
 const lLink = 'Hola Hellen, quisiera solicitar el servicio de Laceado Japonés Definitivo'
