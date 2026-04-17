@@ -14,6 +14,47 @@ const servicesMenu = document.getElementById("servicesMenu");
 const packageMenu = document.getElementById("packageMenu");
 const contactMenu = document.getElementById("contactMenu");
 
+// Botones para acción de whatsapp
+const bannerButton = document.getElementById("banner-button")
+const bLink = 'Hol Hellen, quisiera reservar una cita en el salón'
+
+const laceadoButton = document.getElementById("ss-laceado")
+const lLink = 'Hola Hellen, quisiera solicitar el servicio de Laceado Japonés Definitivo'
+
+const alisadoButton = document.getElementById("ss-alisado")
+const aLink = 'Hola Hellen, quisiera solicitar el servicio de Alisado Reductor'
+
+const botoxButton = document.getElementById("ss-botox")
+const bxLink = 'Hola Hellen, quisiera solicitar el servicio de Botox Capilar'
+
+const mechasButton = document.getElementById("ss-mechas")
+const mLink = 'Hola Hellen, quisiera solicitar el servicio de Diseño de Mechas'
+
+const siluetaButton = document.getElementById("pc-silueta")
+const sLink = 'Hola Hellen, me interesan los detalles del paquete de Moldeamiento de Silueta'
+
+const carboButton = document.getElementById("pc-carbo")
+const cLink = 'Hola Hellen, me interesan los detalles del paquete de Carboxiterapia'
+
+const contactButton = document.getElementById("contact-button")
+const ctLink = 'Hola Hellen, quisiera reservar una cita en el salón'
+
+const WSP_NUMBER = "51960908272";
+
+function openWsp(message) {
+  const url = `https://wa.me/${WSP_NUMBER}?text=${encodeURIComponent(message)}`;
+  window.open(url, "_blank");
+}
+
+bannerButton.onclick = () => openWsp(bLink)
+laceadoButton.onclick = () => openWsp(lLink)
+alisadoButton.onclick = () => openWsp(aLink)
+botoxButton.onclick = () => openWsp(bxLink)
+mechasButton.onclick = () => openWsp(mLink)
+siluetaButton.onclick = () => openWsp(sLink)
+carboButton.onclick = () => openWsp(cLink)
+contactButton.onclick = () => openWsp(ctLink)
+
 btn.addEventListener("mouseenter", () => (img.style.filter = "blur(4px)"));
 btn.addEventListener("mouseleave", () => (img.style.filter = "blur(0px)"));
 
