@@ -424,6 +424,19 @@
         }, { threshold: 0.12 });
 
         cards.forEach(c => observer.observe(c));
+
+        // ── Filtros sticky ───────────────────────────────────
+        const filtersEl = document.querySelector('.cat-filters');
+        const heroEl    = document.querySelector('.cat-hero');
+
+        window.addEventListener('scroll', () => {
+          const heroBottom = heroEl.getBoundingClientRect().bottom;
+          if (heroBottom <= 200) {
+            filtersEl.classList.add('sticky');
+          } else {
+            filtersEl.classList.remove('sticky');
+          }
+        });
     </script>
 </body>
 
