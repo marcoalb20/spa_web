@@ -318,25 +318,6 @@ header .burguer:hover {
   font-weight: bold;
 }
 
-/* ── Filtros sticky ──────────────────────────────────── */
-.cat-filters.sticky {
-  position: fixed;
-  top: 25px;
-  left: 50%;
-  right: 50%;
-  z-index: 101;
-  background-color: transparent;
-  border: none;
-  padding: 0.4rem 1rem;
-  margin-top: 0;
-  box-shadow: none;
-  width: auto;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: center;
-  gap: 0.5rem;
-}
 /* ════════════════════════════════════════════════════════
    GRID
    ════════════════════════════════════════════════════════ */
