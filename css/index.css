@@ -3,11 +3,13 @@
   src: url("../assets/font/Raleway-Light.ttf");
   font-display: swap;
 }
+
 @font-face {
   font-family: "RalewayB";
   src: url("../assets/font/Raleway-Bold.ttf");
   font-display: swap;
 }
+
 @font-face {
   font-family: "Raleway";
   src: url("../assets/font/Raleway-Medium.ttf");
@@ -305,6 +307,7 @@ header .burguer:hover {
 }
 
 .about-img-box {
+  position: relative;
   width: 100%;
 }
 
@@ -313,6 +316,24 @@ header .burguer:hover {
   width: 100%;
   object-fit: cover;
   border-radius: 15px;
+}
+
+.about-logo-box {
+  position: absolute;
+  height: auto;
+  width: 100%;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.about-logo-img {
+  /* position: absolute; */
+  height: 100%;
+  width: auto;
+  inset: 0;
 }
 
 .services {
@@ -572,6 +593,7 @@ header .burguer:hover {
   align-items: center;
   justify-content: center;
 }
+
 .contact-title {
   font-size: 1.5rem;
   font-weight: bold;
@@ -637,6 +659,7 @@ footer {
     text-decoration: none;
     color: #ffffff;
   }
+
   header .options .group-1 a {
     text-decoration: none;
     color: var(--color-fonts-p);
@@ -644,6 +667,7 @@ footer {
     padding: 0rem 0.5rem;
     transition: all 0.1s ease-in-out;
   }
+
   header .options .group-1 a:hover {
     font-weight: bold;
     text-decoration: underline;
@@ -712,6 +736,7 @@ footer {
   .about-title {
     margin-bottom: 0;
   }
+
   .about-text {
     margin-bottom: 0;
   }
@@ -731,6 +756,7 @@ footer {
     flex-direction: column;
     align-items: center;
   }
+
   .service:hover .flip-inner {
     transform: rotateY(180deg);
   }
@@ -754,6 +780,7 @@ footer {
     perspective: 1000px;
     min-height: 220px;
   }
+
   .flip-inner {
     height: 100%;
   }
@@ -763,16 +790,19 @@ footer {
     grid-column: 1;
     grid-row: 1;
   }
+
   .s2 {
     max-height: 200px;
     grid-column: 2;
     grid-row: 1;
   }
+
   .s3 {
     max-height: 250px;
     grid-column: 1 / span 2;
     grid-row: 2;
   }
+
   .s4 {
     max-height: 500px;
     grid-column: 3;
@@ -850,6 +880,7 @@ footer {
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -857,8 +888,8 @@ footer {
 }
 
 /* Desenfoque de imagen al hover del boton */
-.banner-button:hover ~ .banner-img,
-.banner-content:has(.banner-button:hover) ~ .banner-img {
+.banner-button:hover~.banner-img,
+.banner-content:has(.banner-button:hover)~.banner-img {
   filter: blur(3px);
   transition: filter 0.3s ease;
 }
@@ -866,6 +897,7 @@ footer {
 .banner-img {
   transition: filter 0.3s ease;
 }
+
 /* Animacion de entrada al scrolear */
 .service {
   opacity: 0;
